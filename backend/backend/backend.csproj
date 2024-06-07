@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />
+      <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.6" />
+      <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.6" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.6" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.6" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\App.DAL.EF\App.DAL.EF.csproj" />
+      <ProjectReference Include="..\App.Domain\App.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\ActivityEvent\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\ActivityEvent\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\ActivityEvent\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\ActivityEvent\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\ActivityEvent\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\MinutesAdded\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\MinutesAdded\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\MinutesAdded\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\MinutesAdded\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\MinutesAdded\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\ParticipantEvent\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\ParticipantEvent\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\ParticipantEvent\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\ParticipantEvent\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\ParticipantEvent\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\RaffleItem\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\RaffleItem\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\RaffleItem\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\RaffleItem\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\RaffleItem\Index.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Areas\Api\Controllers\" />
+    </ItemGroup>
+
+</Project>
