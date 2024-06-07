@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Net.Http.Headers;
-using WebApp.DTO;
+using LoginInfo = WebApp.DTO.LoginInfo;
 
 namespace WebApp.ApiControllers.Identity;
 
@@ -39,7 +39,7 @@ public class AccountController : ControllerBase
     }
 
     [HttpPost]
-    [ProducesResponseType((int) HttpStatusCode.OK)]
+    [ProducesResponseType<LoginResponse>((int) HttpStatusCode.OK)]
     [Produces("application/json")]
     public async Task<ActionResult> Login([FromBody] LoginInfo loginInfo)
     {
@@ -112,11 +112,11 @@ public class AccountController : ControllerBase
             Path = "/api/v1/identity/Account/"
         });
 
-        return Ok();
+        return Ok(new LoginResponse() { JwtCookieExpireTimeInMinutes = JwtCookieExpireTimeInMinutes });
     }
 
     [HttpGet]
-    [ProducesResponseType((int) HttpStatusCode.OK)]
+    [ProducesResponseType<LoginResponse>((int) HttpStatusCode.OK)]
     [Produces("application/json")]
     public async Task<ActionResult> RefreshJwt()
     {
@@ -146,11 +146,11 @@ public class AccountController : ControllerBase
             }
         );
         
-        return Ok();
+        return Ok(new LoginResponse() { JwtCookieExpireTimeInMinutes = JwtCookieExpireTimeInMinutes });
     }
 
     [HttpPost]
-    [ProducesResponseType((int) HttpStatusCode.OK)]
+    [ProducesResponseType<LoginResponse>((int) HttpStatusCode.OK)]
     [Produces("application/json")]
     public async Task<ActionResult> Register([FromBody] RegisterInfo registerInfo)
     {

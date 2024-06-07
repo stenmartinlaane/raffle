@@ -37,6 +37,10 @@ namespace App.DAL.EF.Migrations
                     b.Property<DateTime>("EndTime")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<string>("EventName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<int>("MinutesPerTicket")
                         .HasColumnType("integer");
 
@@ -263,9 +267,14 @@ namespace App.DAL.EF.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<Guid>("ParticipantEventId")
+                        .HasColumnType("uuid");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ActivityEventId");
+
+                    b.HasIndex("ParticipantEventId");
 
                     b.ToTable("RaffleItems");
                 });
@@ -433,7 +442,15 @@ namespace App.DAL.EF.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("App.Domain.ParticipantEvent", "ParticipantEvent")
+                        .WithMany("RaffleItems")
+                        .HasForeignKey("ParticipantEventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("ActivityEvent");
+
+                    b.Navigation("ParticipantEvent");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -491,6 +508,8 @@ namespace App.DAL.EF.Migrations
             modelBuilder.Entity("App.Domain.ParticipantEvent", b =>
                 {
                     b.Navigation("MinutesAddeds");
+
+                    b.Navigation("RaffleItems");
                 });
 #pragma warning restore 612, 618
         }

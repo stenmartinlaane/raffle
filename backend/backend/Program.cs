@@ -4,12 +4,12 @@ using App.DAL.EF;
 using App.Domain.Identity;
 using Asp.Versioning;
 using Asp.Versioning.ApiExplorer;
+using backend.Helpers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using WebApp;
-using WebApp.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -55,6 +55,10 @@ builder.Services.AddAuthorization(
             .RequireClaim(ClaimTypes.NameIdentifier)
         );
     }
+);
+
+builder.Services.AddAutoMapper(
+    typeof(App.DAL.EF.AutoMapperProfile)
 );
 
 var apiVersioningBuilder = builder.Services.AddApiVersioning(options =>
@@ -118,9 +122,9 @@ app.UseCors("AllowSpecificOrigin");
 
 app.UseMiddleware<RequestLoggingMiddleware>();
 
-// app.UseAuthentication();
+app.UseAuthentication();
 
-// app.UseAuthorization();
+app.UseAuthorization();
 
 
 

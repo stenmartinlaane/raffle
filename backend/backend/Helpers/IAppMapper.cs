@@ -1,4 +1,4 @@
-namespace WebApp.Helpers;
+namespace backend.Helpers;
 
 public interface IAppMapper<TLeftObject, TRightObject>
     where TLeftObject : class

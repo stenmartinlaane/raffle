@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  /* Brand Colors */
+  --primary-color: rgba(0, 90, 161, 255);
+  --secondary-color: rgba(227,227,227,255)
+
+  /* Background Colors */
+  --background: rgba(238, 242, 245, 255);
+  --footer-background: rgba(55, 55, 55, 255);
+  --foreground: rgba(255, 255, 255, 255);
+
+  /* Text Colors */
+  --text-on-navbar: rgba(66, 66, 66);
+  --text-on-footer-dark: rgba(124, 124, 124);
+  --text-on-footer-light: rgba(224, 224, 224)
+  --text-on-white-light: rgba(126, 126, 126);
+  --text-on-white-dark: rgba(0, 0, 0);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255; */
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

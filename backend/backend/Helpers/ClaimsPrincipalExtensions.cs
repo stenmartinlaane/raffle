@@ -1,7 +1,6 @@
-namespace WebApp.Helpers;
-
-using System;
 using System.Security.Claims;
+
+namespace backend.Helpers;
 
 public static class ClaimsPrincipalExtensions
 {

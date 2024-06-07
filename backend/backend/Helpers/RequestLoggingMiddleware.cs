@@ -1,8 +1,6 @@
-namespace WebApp.Helpers;
-
-using Microsoft.AspNetCore.Http;
-using System.Threading.Tasks;
 using System.Diagnostics;
+
+namespace backend.Helpers;
 
 public class RequestLoggingMiddleware
 {
